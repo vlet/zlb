@@ -1,0 +1,51 @@
+Description: fixed global.conf
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ zenloadbalancer (3.10.1-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Author: Local User <user@localhost>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- zenloadbalancer-3.10.1.orig/config/global.conf
++++ zenloadbalancer-3.10.1/config/global.conf
+@@ -31,9 +31,9 @@ $version="3.7";
+ #Cipher PCI
+ $cipher_pci="DEFAULT";
+ #BUY SSL Certificates
+-$buy_ssl="http://ecommerce.sofintel.net/ssl/ssl-certificate.aspx?ci=8347&prog_id=503889";
++$buy_ssl="#";
+ #URL of dinamic content in global view
+-$url="https://www.sofintel.net/json/eeinfo.php";
++$url="#";
+ 
+ #dns file server?
+ $filedns="/etc/resolv.conf";
+@@ -46,9 +46,9 @@ $ifconfig_bin="/sbin/ifconfig";
+ #Where is ip bynary?
+ $ip_bin="/sbin/ip";
+ #Where is pen (tcp) load balancer?
+-$pen_bin="/usr/local/zenloadbalancer/app/pen/bin/pen";
++$pen_bin="/usr/bin/pen";
+ #Where is pen control load balancer?
+-$pen_ctl="/usr/local/zenloadbalancer/app/pen/bin/penctl";
++$pen_ctl="/usr/bin/penctl";
+ #Where is fdisk binary?
+ $fdisk_bin="/sbin/fdisk";
+ #Where is df binary?

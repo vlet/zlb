@@ -1,0 +1,107 @@
+Description: remove ads
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ zenloadbalancer (3.10.1-2) UNRELEASED; urgency=medium
+ .
+   * removed ads
+Author: Local User <user@localhost>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- zenloadbalancer-3.10.1.orig/www/content1-1.cgi
++++ zenloadbalancer-3.10.1/www/content1-1.cgi
+@@ -56,34 +56,6 @@ my @data_net = &getNetworkStats();
+ $description = "img/graphs/graphnet.jpg";
+ &graphs( $description, @data_net );
+ 
+-#
+-
+-####################################
+-# ZLB COMMERCIAL INFORMATION
+-####################################
+-
+-my $systemuuid = `/usr/sbin/dmidecode | grep UUID | awk '{print \$2}'`;
+-chomp ( $systemuuid );
+-print "<div class=\"box-header\">Zen Load Balancer Professional Products &amp; Services</div>";
+-print " <div class=\"box table\">
+-	<table class=\"commerce\">
+-	<thead>";
+-print "		<tr>";
+-print "			<td>Professional Services</td><td>Professional Products</td>";
+-print "				<td>News</td>";
+-print "		</tr>";
+-print "</thead>";
+-print "<tbody>";
+-print "		<tr>";
+-
+-print "			<td><div id=\"support\"></div></td>
+-			<td><div id=\"products\"></div></td>
+-			<td><div id=\"news\"></div></td>";
+-print "		</tr>";
+-print "</tbody>";
+-print "</table></div>";
+-print "<br>";
+-
+ ####################################
+ # GLOBAL FARMS INFORMATION
+ ####################################
+@@ -188,44 +160,3 @@ print "</div>";
+ 
+ print "<br class=\"cl\" ></div>\n";
+ 
+-print "<script src=\"https://code.jquery.com/jquery-latest.pack.js\"></script>
+-<script>
+-\$(document).ready(function(){
+-  var container0 = \$('#support');
+-  var container1 = \$('#products');
+-  var container2 = \$('#news');
+-  var fixedsupport = '<a href=\"http://www.zenloadbalancer.com/support-programs/?zlb_gui\" target=\"_blank\"><i class=\"fa fa-support fa-2x\"></i>&nbsp;&nbsp;Get Support for Zen Community and Enterprise Edition</a><br><a href=\"https://www.sofintel.net/support?zlb_gui\" target=\"_blank\"><i class=\"fa fa-users fa-2x\"></i>&nbsp;&nbsp;Already have Professional Support? Open a Support Request here</a><br>';
+-  var fixedproducts = '<a href=\"http://www.zenloadbalancer.com/products/?zlb_gui\" target=\"_blank\"><i class=\"fa fa-tasks fa-2x\"></i>&nbsp;&nbsp;Get more from Zen with Enterprise Edition Appliances</a><br><a href=\"http://ecommerce.sofintel.net/ssl/ssl-certificate.aspx\" target=\"_blank\"><i class=\"fa fa-certificate fa-2x\"></i>&nbsp;&nbsp;Get your best Zen-Ready SSL Certificates at the best price *</a><br><br><font size=1>&nbsp;&nbsp;&nbsp;* We are a Starfield Technologies supplier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><<img src=\"/img/img_verified_logo.gif\" title=\"Verified by Starfield Technologies\">';
+-  var fixednews = 'ZLB News<br><a href=\"http://www.zenloadbalancer.com/news/?zlb_gui\" target=\"_blank\"><i class=\"fa fa-info-circle fa-2x\"></i>&nbsp;&nbsp;Visit the news page on our WEB site</a><br>';
+-  var url = '$url';
+-  window.connect = 'false';
+-  \$.getJSON(url + '?callback=?&uuid=$systemuuid',
+-     function(data){
+-	window.connect = 'true';
+-	if(data.results[0] == ''){
+-		container0.html(fixedsupport);
+-	}
+-	else {
+-		container0.html(data.results[0]);
+-	}
+-	if(data.results[1] == ''){
+-		container1.html(fixedproducts);
+-	}
+-	else{
+-		container1.html(data.results[1]);
+-	}
+-	if(data.results[2] == ''){
+-            	container2.html(fixednews);
+-	} 
+-	else{
+-		container2.html(data.results[2]);
+-	}
+-     }
+-  );
+-  if(window.connect == 'false'){
+-    container0.html(fixedsupport);
+-    container1.html(fixedproducts);
+-    container2.html(fixednews);
+-  }
+-});
+-</script>";

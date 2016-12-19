@@ -1,0 +1,20 @@
+Source: zenloadbalancer
+Section: net
+Priority: optional
+Maintainer: Vladimir Lettiev <thecrux@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: https://github.com/zevenet/zlb
+#Vcs-Git: git://git.debian.org/collab-maint/zlb.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/zlb.git;a=summary
+
+Package: zenloadbalancer
+Architecture: all
+Depends: ${misc:Depends}, mini-httpd, gdnsd, pen, pound, nagios-plugins-basic, ucarp,
+ rrdtool, libnet-netmask-perl, libnet-ssh-perl, libexpect-perl, expect, libnet-ssh-expect-perl,
+ libproc-daemon-perl, libnetwork-ipv4addr-perl, librrds-perl, libio-interface-perl,
+ libgd-3dbargrapher-perl, libfile-grep-perl, libdata-validate-ip-perl, libpcap0.8, ntpdate,
+ liblinux-inotify2-perl, libfile-grep-perl, iputils-arping, openssl, netstat-nat, libev4, snmpd,
+ conntrack, rsync
+Description: Multilayered load balancer with web GUI
+ ZEVENET Load Balancer is a multilayered and high performance load balancer whith an easy configuration, usability and user-friendly web GUI.
