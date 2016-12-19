@@ -16,8 +16,12 @@
 /app/mini_httpd/mini_httpd/*.pem
 
 # rrd databases
-/app/zenrrd/rrd/*
+/app/zenrrd/rrd/*.rrd
 
 # Temporary graphs
 /www/img/graphs/*
-
+/debian/zenloadbalancer/
+/debian/files
+/debian/*.debhelper
+/debian/zenloadbalancer.debhelper.log
+/.pc
